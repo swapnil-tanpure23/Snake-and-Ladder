@@ -3,6 +3,9 @@ package com.example.snakeladder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -12,10 +15,11 @@ import java.io.IOException;
 
 public class SnakeLadder extends Application {
     public static final int tilesize=40, width=10, height=10;
+    public static final int buttonline = width*tilesize + 50, infoline = buttonline - 30;
     private Pane createContent(){
         Pane root = new Pane();
 
-        root.setPrefSize(width*tilesize, height*tilesize + 50);
+        root.setPrefSize(width*tilesize, height*tilesize + 100);
 
         for (int i = 0; i <height ; i++) {
             for (int j = 0; j <width ; j++) {
@@ -32,7 +36,33 @@ public class SnakeLadder extends Application {
         board.setFitHeight(height*tilesize);
         board.setFitWidth(width*tilesize);
 
-        root.getChildren().add(board);
+        Button playerOne = new Button("Player 1");
+        Button playerTwo = new Button("Player 2");
+        Button startButton = new Button("Start");
+
+        playerOne.setTranslateY(buttonline);
+        playerOne.setTranslateX(20);
+
+        playerTwo.setTranslateY(buttonline);
+        playerTwo.setTranslateX(320);
+
+        startButton.setTranslateY(buttonline);
+        startButton.setTranslateX(180);
+
+        Label playeronelabel = new Label("Your Turn!");
+        Label playertwolabel = new Label("Your Turn!");
+        Label dicelabel = new Label("Start The Game...!");
+
+        playeronelabel.setTranslateY(infoline);
+        playeronelabel.setTranslateX(20);
+
+        playertwolabel.setTranslateY(infoline);
+        playertwolabel.setTranslateX(320);
+
+        dicelabel.setTranslateY(infoline);
+        dicelabel.setTranslateX(160);
+
+        root.getChildren().addAll(board, playerTwo, playerOne, startButton, playeronelabel, playertwolabel, dicelabel);
 
         return root;
      }
