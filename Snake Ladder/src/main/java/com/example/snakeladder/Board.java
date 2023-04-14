@@ -44,11 +44,11 @@ public class Board {
         return -1;
     }
 
-    public static void main(String[] args) {
-        Board board = new Board();
-        for (int i = 0; i < board.PositionCordinates.size(); i++) {
-            System.out.println(i + " $  x : " +  board.PositionCordinates.get(i).getKey() + "  Y : " + board.PositionCordinates.get(i).getValue());
-
-        }
-    }
+//    public static void main(String[] args) {
+//        Board board = new Board();
+//        for (int i = 0; i < board.PositionCordinates.size(); i++) {
+//            System.out.println(i + " $  x : " +  board.PositionCordinates.get(i).getKey() + "  Y : " + board.PositionCordinates.get(i).getValue());
+//
+//        }
+//    }
 }
